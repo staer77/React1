@@ -40,6 +40,8 @@ WorkDirectory → Change → Stage
 
 * markdown grammer ``` *-+
 
+* portable
+
 ## 20260304 (1주차)
 
 * Next.js는 **리액트(React) 기반의 풀스택 웹 프레임워크**로, 서버 사이드 렌더링(SSR)과 정적 사이트 생성(SSG)을 지원해 검색 엔진 최적화(SEO)와 빠른 성능을 제공
