@@ -42,6 +42,18 @@ WorkDirectory → Change → Stage
 
 * portable
 
+* UI = f(state)
+이벤트가 발생하면 DOM이 바뀌는 것이 아니라, state를 변경하면 재 rendering 하는 것이다
+리액트에서 Rendering이란 현재 State를 기준으로 UI를 다시 계산하는 과정
+DOM 조작이 아닌 UI 계산
+즉 상태가 무엇인지만 정의하면 됨
+
+* State와 Rendering의 관계를 명확하게 설명하고 사용 할 수 있어야 함
+
+1. 왜 이 state가 여기 있어야 하는지 설명할 수 있어야 함
+2. 왜 이 Component가 다시 Rendering 되는지 설명할 수 있어야 함
+3. 왜 Effect가 필요한지 혹은 필요 없는지 설명할 수 있어야 함
+
 ## 20260304 (1주차)
 
 * Next.js는 **리액트(React) 기반의 풀스택 웹 프레임워크**로, 서버 사이드 렌더링(SSR)과 정적 사이트 생성(SSG)을 지원해 검색 엔진 최적화(SEO)와 빠른 성능을 제공
