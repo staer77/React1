@@ -12,10 +12,33 @@ git bash는 리눅스처럼 가능함
 개인 pc는 사용자 동륵후 디렉토리 생성
 마지막에 git 저장소 생성
 
+```
+// 1. 변수 선언 및 할당 (데이터 저장)
+let name = "JS";
+const message = "Hello, World!";
+
+// 2. 콘솔 출력
+console.log(message); // 콘솔에 Hello, World! 출력
+
+// 3. 함수 정의 및 호출
+function sayHello(userName) {
+    return `${userName}님, 환영합니다!`;
+}
+let result = sayHello(name);
+alert(result); // 브라우저 알림창에 출력
+
+// 4. 간단한 조건문
+if (name === "JS") {
+    console.log("JavaScript입니다.");
+}
+```
+
 * defualt branch
 git master
 github git을 만들어 서비스를 하는거임 main
 WorkDirectory → Change → Stage
+
+* markdown grammer ``` *-+
 
 ## 20260304 (1주차)
 
