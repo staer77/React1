@@ -8,12 +8,11 @@
 * 파워셀은 파일 경로만 나옴 cmd도 마찬가지
 git bash는 리눅스처럼 가능함
 
-공용에서는 디렉토리 생성 후 사용자 등록
+* 공용에서는 디렉토리 생성 후 사용자 등록
 개인 pc는 사용자 동륵후 디렉토리 생성
 마지막에 git 저장소 생성
 
-defualt branch
-
+* defualt branch
 git master
 github git을 만들어 서비스를 하는거임 main
 WorkDirectory → Change → Stage
