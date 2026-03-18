@@ -4,6 +4,17 @@
 3. 배운내용 & 코드
 4. 최근 날짜가 제일 위로 올라오게
 
+## 20260318 (3주차)
+* 리액트는 작은 컴포넌트 단위로 개발함, 점진적으로 적용할 수 있도록 설계
+* 설치 방법 node 검색해서 LTS version 다운 후 시스템 설치하고 버전 확인, node 설치하면 npm과 npx 함께 설치, 코드 에디터와 웹 브라우저만 준비하면 개발 환경 구축은 끝남
+* node package manager / eXecuter 
+* npm create vite@latest my-app, 리액트 컴파일러는 개발 중임
+* npm create vite@latest my-app -- --template react-swc -> vite 최신버젼 프로젝트 이름 뒤에 나오는 명령어는 vite에 넘김 template 넘김 리액트 사용하고 트렌스는 swc를 사용
+* 리액트 프로젝트 생성해도 git 초기화는 장도 아님 직접 해야함
+* kebabcase -> hyphen 씀, git
+* npm run dev
+
+
 ## 20260311 (2주차)
 * 파워셀은 파일 경로만 나옴 cmd도 마찬가지
 git bash는 리눅스처럼 가능함
