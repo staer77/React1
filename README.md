@@ -12,7 +12,31 @@
 * npm create vite@latest my-app -- --template react-swc -> vite 최신버젼 프로젝트 이름 뒤에 나오는 명령어는 vite에 넘김 template 넘김 리액트 사용하고 트렌스는 swc를 사용
 * 리액트 프로젝트 생성해도 git 초기화는 장도 아님 직접 해야함
 * kebabcase -> hyphen 씀, git
-* npm run dev
+* npm run dev, rm -rf node_*, 클론 받은 프로젝트의 경우 npm i
+* 리액트 컴포넌트는 마크업을 함께 사용할 수 있는 자바스크립트 함수로 개발
+* 컴포넌트가 많아지면 별도의 디렉토리를 생성해서 관리
+* app.jsx 사용 - 이미지 출력하는 간단한 기능 - 테스트 - MyComponent - src/App.jsx
+* import 이름 from 식별자, DOM 경량화
+```
+import reactLogo from './assets/react.svg'
+
+function Profile() {
+  return (
+    <>
+      <img src={reactLogo} className="logo" alt="React logo" />
+    </>
+  )
+}
+
+export default function App() {
+
+  return (
+    <>
+      <Profile />
+    </>
+  )
+}
+```
 
 
 ## 20260311 (2주차)
