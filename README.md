@@ -4,6 +4,16 @@
 3. 배운내용 & 코드
 4. 최근 날짜가 제일 위로 올라오게
 
+## 20260325 (4주차)
+* vite에서 JS + SWC가 사라진 이유 - 260312 플러그인 관련 항목은 현재 실험적인 통합 단계이므로 이슈가 발생할 수 있음, SWC는 속도 문제를 많이 해결했음 근데 파싱 속도 3배 더 빠른게 있음 OXC
+* SWC(Speedy web compiler) 트랜스파일링(TS->JS) 변들링에 특화
+* OXC(Oxidation compiler) 트렌스파일러 등을 모두 대체하려는 고성능 도구 모음(Toolchain), 정적 분석 및 Linting에 매우 강점
+* 컴포넌트 Nesting(중첩) 특징 컴포넌트를 다른 컴포넌트 안에서 호출하는 걸을 의미
+* 렌더링 과정 App.jsx(component 1, 2, ...) -> main.jsx -> index.html
+* 컴포넌트 import와 export - 분리된 컴포넌트는 export는 외부에서 사용할 수 있도록, 다른 컴포넌트 에서는 import 구문을 이용해 분리된 컴포넌트 사용
+* Default Export and Named Export - 디폴트는 다른 이름으로 변수명 선언 이것을 로컬 식별자 혹은 변수명 / 네임드는 import하는 곳의 컴포넌트의 이름이 같아야 함 전북 혹은 일부만 import 가능
+* named export -  모든 컴포넌트를 가져올 때 스타 기호(*) Namespace import 방식 이용, 변수명 바꾸고 싶을 때 as키워드 사용
+
 ## 20260318 (3주차)
 * 리액트는 작은 컴포넌트 단위로 개발함, 점진적으로 적용할 수 있도록 설계
 * 설치 방법 node 검색해서 LTS version 다운 후 시스템 설치하고 버전 확인, node 설치하면 npm과 npx 함께 설치, 코드 에디터와 웹 브라우저만 준비하면 개발 환경 구축은 끝남

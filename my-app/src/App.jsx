@@ -1,18 +1,13 @@
-import reactLogo from './assets/react.svg'
-
-function Profile() {
-  return (
-    <>
-      <img src={reactLogo} className="logo" alt="React logo" />
-    </>
-  )
-}
+import Gallery from "./components/Gallery";
+import NamedComponentTest from "./components/NamedComponentTest";
+import Profile from "./components/Profile";
 
 export default function App() {
 
   return (
     <>
-      <Profile />
+      <NamedComponentTest/>
+      <Gallery/>
     </>
   )
 }
