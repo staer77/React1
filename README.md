@@ -17,6 +17,7 @@ function double(number) {
 }
 ```
 * Error : cannot reassign variables declared outside of the component/hook -> 컴파일러 규칙 준수하라는 거임
+* 지역 변경(local mutation) - Mutation은 돌연변이라는 뜻도 가짐, 순수 함수는 함수 스코프 외부의 변수나 호출 전에 생성된 객체를 변경하지 않음, 렌더링하는 동안에 생성된 변수와 객체를 변경하는 것은 불가 
 
 ## 20260408 (6주차)
 * 조건부 렌더링 - 컴포넌트는 조건에 따라 다른 항목을 표시해야 하는 경우가 많음
