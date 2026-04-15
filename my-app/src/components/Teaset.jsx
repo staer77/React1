@@ -3,11 +3,13 @@ function Cup({ guest }) {
 }
 
 export default function Teaset() {
+    const cups = [];
+    for (let i = 0; i < 12; i++) {
+        cups.push(<Cup key={i} guest={i} />);
+    }
     return (
-        <section>
-            <Cup guest={1}/>
-            <Cup guest={2}/>
-            <Cup guest={3}/>
-        </section>
+        <>
+            {cups}
+        </>
     );
 }
