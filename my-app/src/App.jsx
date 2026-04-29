@@ -7,12 +7,13 @@ import PackingList from "./components/PackingList";
 import MovieHeroes from "./components/MovieHeroes";
 import Kiosk from "./components/Kiosk";
 import Teaset from "./components/Teaset";
+import ButtonCom from "./components/ButtonCom";
 
 export default function App() {
  
   return (
     <>
-      <Teaset />
+      <ButtonCom />
     </>
   )
 }
