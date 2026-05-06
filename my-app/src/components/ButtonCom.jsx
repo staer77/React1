@@ -11,7 +11,8 @@ export default function ButtonCom() {
           <nav className={styles.nav}>
             <button className={styles.button} onClick={handleClick}>
               버튼1
-            </button>
+            </button> (local function) handleClick() : void
+              
             <button className={styles.button} onClick={handleClick}>
               버튼2
             </button>

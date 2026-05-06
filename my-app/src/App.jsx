@@ -8,12 +8,13 @@ import MovieHeroes from "./components/MovieHeroes";
 import Kiosk from "./components/Kiosk";
 import Teaset from "./components/Teaset";
 import ButtonCom from "./components/ButtonCom";
+import Toobar from "./components/Toobar";
 
 export default function App() {
  
   return (
     <>
-      <ButtonCom />
+      <Toobar />
     </>
   )
 }
