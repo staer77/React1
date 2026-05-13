@@ -4,6 +4,44 @@
 3. 배운내용 & 코드
 4. 최근 날짜가 제일 위로 올라오게
 
+## 20260513 (11주차)
+* prop는 가독성을 위해서 id로 하는 것이 좋음
+* document.getElementById(id) ->  html문서에서 고유한 id속성을 가진 요소를 찾아 JS객체로 반환하는 메서드
+* 리액트에서는 DOM에 직접 접근하는 것을 권장하지 않음, HOOK 사용
+* 특정 함수만 모아 놓은 파일을 모듈이라고 함(모듈은 대문자X), 이벤트 핸들러만 모아 놓으면 재사용 하기에 편함
+* 리스너 - 이벤트가 발생하는지 안 하는지 지켜봄, 핸들러 - 이벤트 발생했다고 리스너가 말하면 취할 동작을 말 해줌
+* 컴포넌트 - 파스칼 케이스 그 외는 카멜 케이스
+* 이벤트의 전파
+* 이벤트 핸들러는 이벤트 오브젝트를 유일한 매개변수로 사용, 오브젝트는 이벤트의 정보를 읽어 들이는데 사용할 수 있고 이벤트 오브젝트가 전파를 멈출 수 있게 함, 이벤트가 부모 컴포넌트에 닿지 못하도록 막으려면 e.stopPropagetrion()을 호출
+```
+import style from "./Bubble.module.css";
+
+export default function Bubble() {
+    return (
+        <>
+            <h1 className={style.title} onClick={() => alert("네비케이션바 클릭!")}>Bubble</h1>
+            <div className={style.navbar}>
+                <button className={style.button} onClick={() => alert("버튼1 클릭!")}>버튼1</button>
+                <button className={style.button} onClick={() => alert("버튼2 클릭!")}>버튼2</button>
+            </div>
+        </>
+    )
+}
+```
+
+```
+export default function Button({ onClick, children }) {
+    return (
+        <button onClick={e => {
+            e.stopPropagation();
+            onClick();
+        }}>
+            {children}
+        </button>
+    )
+}
+```
+
 ## 20260506 (10주차)
 * 이벤트 핸들러를 인라인으로 정의하고 싶다면 다음과 같이 익명 함수를 사용한다
 * HTML태그에서 props를 사용하는 것은 리액트에서 컴포넌트처럼 처리하면서 props를 넘기기 때문
