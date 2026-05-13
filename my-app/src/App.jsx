@@ -9,13 +9,14 @@
 // import Teaset from "./components/Teaset";
 // import ButtonCom from "./components/ButtonCom";
 // import Toobar from "./components/Toobar";
-import Bubble from "./components/Bubble";
+// import Bubble from "./components/Bubble";
+import Signup1 from "./components/Signup1"
 
 export default function App() {
  
   return (
     <>
-      <Bubble />
+      <Signup1 />
     </>
   )
 }
