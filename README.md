@@ -4,6 +4,47 @@
 3. 배운내용 & 코드
 4. 최근 날짜가 제일 위로 올라오게
 
+## 20260520 (12주차)
+* mode_modules 디렉토리, .git 디렉토리 복사, 마크다운 문법, 무명함수, typescript 프로젝트, else 없는 if문, useState 사용, 주석, 들여쓰기 스페이스
+* 변수명을 하나의 객체로 저장하여 export
+* 지역 변수는 렌더링과 렌더링 사이의 변화가 유지되지 않음, 리액트는 새로운 데이터로 컴포넌트를 다시 렌더링해야 한다는 것을 인식하지 못함
+* 지역 변수를 사용하여 컴포넌트의 상태를 저장하는 것은 불가능, 컴포넌트는 여전히 초기값을 적용하는 것이 문제
+* 리액트에서는 현재의 상태를 보관할 수 있는 메모리를 제공 -> State Hook
+* const [index(state 변수), setindex(setter 함수)] = useState(0)<-초기값;
+* 오류 처리 동작을 사용자 지정하려면 트리에 errorboundary를 추가 -> 오류메세지를 출력할 수 있도록 수정
+```
+import { useState } from "react";
+import { galleryImages } from "./imgData";
+
+export default function Carousel() {
+    // 1. 일반 변수 대신 useState를 사용하여 리액트가 변경 사항을 감지
+    const [index, setIndex] = useState(0);
+
+    function handleClick() {
+        // 2. 다음 인덱스로 넘어가되 마지막 이미지를 넘어가면 0번으로 돌아오도록 제어
+        setIndex((prevIndex) => (prevIndex + 1) % galleryImages.length);
+    }
+
+    let slide = galleryImages[index];
+
+    return (
+        <>
+            <button onClick={handleClick}>Next</button>
+            <h2>
+                {slide.name} by {slide.artist}
+            </h2>
+            <h3>
+                {index + 1} of {galleryImages.length}
+            </h3>
+            <img src={slide.url} alt={slide.alt} />
+            <p>{slide.description}</p>
+        </>
+    );
+}
+
+```
+* 
+
 ## 20260513 (11주차)
 * prop는 가독성을 위해서 id로 하는 것이 좋음
 * document.getElementById(id) ->  html문서에서 고유한 id속성을 가진 요소를 찾아 JS객체로 반환하는 메서드
