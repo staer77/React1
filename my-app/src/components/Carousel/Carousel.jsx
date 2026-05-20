@@ -35,6 +35,7 @@
 //     );
 // }
 
+import style from "./Carousel.module.css";
 import { useState } from "react";
 import { galleryImages } from "./imgData";
 
@@ -47,11 +48,14 @@ export default function Carousel() {
         setIndex((prevIndex) => (prevIndex + 1) % galleryImages.length);
     }
 
+    function handlePrevious() {
+        setIndex(prev => prev === 0 ? galleryImages.length - 1 : prev - 1); 
+    }
+
     let slide = galleryImages[index];
 
     return (
-        <>
-            <button onClick={handleClick}>Next</button>
+        <section className={style.wrapper}>
             <h2>
                 {slide.name} by {slide.artist}
             </h2>
@@ -59,7 +63,15 @@ export default function Carousel() {
                 {index + 1} of {galleryImages.length}
             </h3>
             <img src={slide.url} alt={slide.alt} />
+            <p className={style.button}>
+                <button onClick={handleClick} className={style.next}>
+                    Next
+                </button>
+                <button onClick={handlePrevious} className={style.prev}>
+                    Previous
+                </button>
+            </p>
             <p>{slide.description}</p>
-        </>
+        </section>
     );
 }

@@ -43,6 +43,26 @@ export default function Carousel() {
 }
 
 ```
+
+```
+//     function handleNext() {
+//     if (index === galleryImages.length - 1) {
+//         setIndex(0);
+//     } else {
+//         setIndex(index + 1);
+//         console.log(index);
+//     }
+// }
+
+<!-- function handlePrevious() {
+        if (index === 0) {
+            setIndex(galleryImages.length - 1);
+        } else {
+            setIndex(index - 1);
+            console.log(index);
+        }
+    } -->
+```
 * 
 
 ## 20260513 (11주차)
