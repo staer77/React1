@@ -1,30 +1,112 @@
+/* 전체 레이아웃 (세로 정렬) */
 .wrapper {
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative; /* 버튼의 위치 기준점을 wrapper로 설정 */
-}
-
-.button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5rem; /* 이미지 크기에 맞춰 살짝 조절 */
+    background-color: #1a1a1a;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    padding: 0.5rem 1rem;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 1. 상단 정보 영역 */
+.headerArea {
+    text-align: center;
+}
+
+.headerArea h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.5rem;
+}
+
+.headerArea h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #aaa;
+}
+
+/* 2. 중앙 슬라이더 컨테이너 (사진과 버튼 그룹을 세로로 나열) */
+.sliderContainer {
+    display: flex;
+    flex-direction: column; /* 사진 아래에 버튼이 오도록 세로 배치 */
+    align-items: center;
+    gap: 15px; /* 사진과 버튼 사이의 간격 */
+}
+
+/* 이미지 카드 프레임 */
+.imageFrame {
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageFrame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 사진 아래 버튼들을 가로로 나열하기 위한 그룹 */
+.buttonGroup {
+    display: flex;
+    justify-content: center; /* 버튼들을 가운데로 모음 (양옆으로 벌리고 싶다면 space-between 사용) */
+    gap: 20px; /* Previous 버튼과 Next 버튼 사이의 간격 */
+    width: 100%;
+}
+
+/* 버튼 공통 스타일 (공중 띄우기 제거) */
+.button {
+    font-size: 1rem;
+    color: #fff;
+    background-color: #333; /* 사진 밖으로 나왔으므로 배경색을 명확하게 변경 */
+    border: 1px solid #555;
+    padding: 0.6rem 1.5rem;
     cursor: pointer;
-    z-index: 10; /* 버튼이 다른 요소 위에 오도록 설정 */
+    border-radius: 4px;
+    transition: all 0.2s;
 }
 
-/* 좌우 위치 지정 */
-.prev {
-    left: 20px; /* 왼쪽 끝에서 20px 띄움 */
+.button:hover {
+    background-color: #555;
+    border-color: #777;
 }
 
-.next {
-    right: 20px; /* 오른쪽 끝에서 20px 띄움 */
+/* 3. 하단 설명 영역 */
+.footerArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 600px;
+    text-align: center;
+}
+
+.toggleBtn {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.toggleBtn:hover {
+    background-color: #555;
+}
+
+.description {
+    margin: 0;
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.5;
 }

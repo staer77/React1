@@ -4,6 +4,72 @@
 3. 배운내용 & 코드
 4. 최근 날짜가 제일 위로 올라오게
 
+## 20260527 (13주차)
+* State Hook 기본 동작 -> use로 시작하는 모든 함수는 Hook이라고 함, 오직 렌더링 중일 때만 사용할 수 있는 함수임, 다양한 리액트 기능을 연결(hook into) 할 수 있음, useState는 리애트에서 제공하는 여러가지 hook 중 하나
+* 주의점 : 일반 모듈과 마찬가지로 import 해서 사용함, 컴포넌트의 최상위 수준 또는 사용자 정의 hook에서만 호출할 수 있음, 조건문 / 반복문 / 기타 중첩 함수 내부에서는 Hook 호출할 수 없음
+* 컨텍스트는 state 공유, 리듀서는 state가 복잡하면 관리 편하게 하고 싶을 때 사용
+* 리액트가 state 강조하는 이유 -> 리액트는 state기반 UI, 상태 기반 사고, Effect 같은 것은 핵심 모델이 아니라 escape hatch에 가까움
+* Hook 사용은 이 컴포넌트는 state가 필요하다라고 선언한다는 의미
+* useState를 호출하는 것은 리엑트에 이 컴포넌트가 무언가를 기억하기를 원한다고 말하는 것
+* state 변수의 개수는 제한 없으며 원하는 타입의 state 변수를 가질 수 있음
+* 부모 컴포넌트도 state를 변경할 수 없음, 다른 컴포넌트에 영향을 미치지 않고, 어떤 컴포넌트에서나 state를 추가하거나 제거할 수 있게 됨, 2개의 컴포넌트를 동기화 하려면 자식을 제거하고 공통 부모 컴포넌트에 state 추가 이것이 state 공유
+```
+import style from "./Carousel.module.css";
+import { useState } from "react";
+import { galleryImages } from "./imgData";
+
+export default function Carousel() {
+    const [more, setMore] = useState(true);
+    const [index, setIndex] = useState(0);
+
+    function handleClick() {
+        setIndex((prevIndex) => (prevIndex + 1) % galleryImages.length);
+    }
+
+    function handlePrevious() {
+        setIndex(prev => prev === 0 ? galleryImages.length - 1 : prev - 1); 
+    }
+
+    function handleMoreClick() {
+        setMore(!more);
+    }
+
+    let slide = galleryImages[index];
+
+    return (
+        <section className={style.wrapper}>
+            <div className={style.headerArea}>
+                <h2>{slide.name} by {slide.artist}</h2>
+                <h3>{index + 1} of {galleryImages.length}</h3>
+            </div>
+
+            <div className={style.sliderContainer}>
+                {/* 사진 프레임 */}
+                <div className={style.imageFrame}>
+                    <img src={slide.url} alt={slide.alt} />
+                </div>
+                
+                <div className={style.buttonGroup}>
+                    <button onClick={handlePrevious} className={`${style.button} ${style.prev}`}>
+                        Previous
+                    </button>
+                    <button onClick={handleClick} className={`${style.button} ${style.next}`}>
+                        Next
+                    </button>
+                </div>
+            </div>
+
+            <div className={style.footerArea}>
+                <button onClick={handleMoreClick} className={style.toggleBtn}>
+                    {more ? "Hide" : "Show"} description
+                </button>
+                {more && <p className={style.description}>{slide.description}</p>}
+            </div>
+        </section>
+    );
+}
+```
+
 ## 20260520 (12주차)
 * mode_modules 디렉토리, .git 디렉토리 복사, 마크다운 문법, 무명함수, typescript 프로젝트, else 없는 if문, useState 사용, 주석, 들여쓰기 스페이스
 * 변수명을 하나의 객체로 저장하여 export
