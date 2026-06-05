@@ -4,6 +4,57 @@
 3. 배운내용 & 코드
 4. 최근 날짜가 제일 위로 올라오게
 
+## 20260605(14주차)
+* 리엑트에 저장된 state는 alert창이 실행될 때 변경될 수 있음
+* 이벤트 헨들러의 코드가 비동기식이라도 렌더링하는 동안 state 변수 값은 절대 변경되지 않음
+* 여러가지 state 사용법
+* set 함수로 state 변수를 저장하면 렌더링이 큐에 들어감 경우에 따라서는 렌더링을 큐에 넣기 전에 state 변수 값에 몇 가지 작업을 수행하고 싶을 때도 있음 이런 경우를 대비해 리액트가 state 업데이트를 어떻게 배치처리(batches, 일괄처리)하는지 이해해야 함
+* 리엑트 업데이트의 배치처리 - 리액트는 이벤트 핸들러의 모든 코드가 실행될 때까지 state를 업데이트 하지 않고 대기
+batching(프로세스) -> 리액트는 프로세스로 동작하기 때문에 불필요하게 많은 트리거의 발생 없이 복수의 state변수를 업데이트할 수 있게 됨
+* 동일한 state변수를 여러 번 업데이트 하고 싶은 경우엔 state값을 전달하는 대신 큐에서 하나 전 state를 기반으로 다음 state를 전달할 수 있음, state값을 대체하는 것이 아닌 이 react값을 이렇게 처리해라고 지시하는 방법
+* 업데이터 함수: n => n + 1, 다른 코드가 모두 실행된 후에 실행되
+* setNumber(n => n + 1)의 n => n + 1는 축약된 표현 원래는 (n) => {return n + 1};
+* 매개변수가 하나이면 소괄호 생략 가능, 실행문이 하나이고 return만 하는 경우 return 키워드와 중괄호 생략 가능
+* 리액트 프로젝트 배포(feat. GitHub) - id.github.io
+* 
+```
+import {useState} from 'react';
+
+export default function BtnClick() {
+    const [number, setNumber] = useState(0);
+
+    function handleIncrement3() {
+        setNumber(number + 1);
+        console.log(number);
+        setNumber(number + 1);
+        console.log(number);
+        setNumber(number + 1);
+        console.log(number);
+    }
+
+    function handleIncrement5() {
+        setNumber(number + 5);
+        alert(number);
+    }
+
+    function handleTimer() {
+        setNumber(number + 5);
+        setTimeout(() => {
+            alert(number);
+        }, 1000);
+    }
+
+    return (
+        <div>
+            <h1>{number}</h1>
+            <button onClick={handleIncrement3} >+3</button> &nbsp;
+            <button onClick={handleIncrement5}>+5</button> &nbsp;
+            <button onClick={handleTimer}>Timer</button>
+        </div>
+    );
+}
+```
+
 ## 20260527 (13주차)
 * State Hook 기본 동작 -> use로 시작하는 모든 함수는 Hook이라고 함, 오직 렌더링 중일 때만 사용할 수 있는 함수임, 다양한 리액트 기능을 연결(hook into) 할 수 있음, useState는 리애트에서 제공하는 여러가지 hook 중 하나
 * 주의점 : 일반 모듈과 마찬가지로 import 해서 사용함, 컴포넌트의 최상위 수준 또는 사용자 정의 hook에서만 호출할 수 있음, 조건문 / 반복문 / 기타 중첩 함수 내부에서는 Hook 호출할 수 없음
